@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Owen | Your powerful WhatsApp bot with 100+ commands. Entertainment, games, AI, downloaders, group management, and more. Free to use."
+    />
+    <meta
+      name="keywords"
+      content="WhatsApp bot, Owen bot, WhatsApp automation, chat bot, group management, entertainment bot"
+    />
+    <meta name="author" content="Owen Bot" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#3b82f6" />
+
+    <meta property="og:title" content="Owen - Powerful WhatsApp Bot" />
+    <meta
+      property="og:description"
+      content="Your all-in-one WhatsApp companion with 100+ commands for entertainment, games, AI, and more."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://owen-production-28fc.up.railway.app/"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Owen - Powerful WhatsApp Bot" />
+    <meta
+      name="twitter:description"
+      content="Your all-in-one WhatsApp companion with 100+ commands for entertainment, games, AI, and more."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Owen</title>
+
+    <script>
+      (function () {
+        const stored = localStorage.getItem("theme");
+        if (
+          stored === "dark" ||
+          (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
