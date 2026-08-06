@@ -47,7 +47,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div>
+    <div className='border-b last:border-b-0'>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className='w-full py-4 flex items-center justify-between text-left cursor-pointer'
@@ -74,14 +74,17 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 
 export function FAQ() {
   return (
-    <section id='faq' className='py-16 sm:py-24 bgDark'>
+    <section id='faq' className='py-20 sm:py-28 bg'>
       <div className='max-w-3xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='text-center mb-12'>
-          <h2 className='text-3xl sm:text-4xl font-bold text mb-4'>Frequently Asked Questions</h2>
+        <div className='text-center mb-14'>
+          <p className='text-xs font-semibold tracking-[0.2em] uppercase mb-4 textPrimary'>FAQ</p>
+          <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold text mb-4 tracking-tight'>
+            Frequently asked questions
+          </h2>
           <p className='text-lg textMuted'>Everything you need to know about Owen.</p>
         </div>
 
-        <div className='bgLight rounded-xl border border shadowS px-6'>
+        <div className='bgLight rounded-xl border shadowS px-6'>
           {faqs.map((faq, index) => (
             <FAQItem key={index} question={faq.question} answer={faq.answer} />
           ))}

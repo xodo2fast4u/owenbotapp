@@ -12,9 +12,9 @@ export function App() {
     if (typeof window !== 'undefined') {
       const stored = localStorage.getItem('theme');
       if (stored) return stored === 'dark';
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return true;
     }
-    return false;
+    return true;
   });
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export function App() {
   const toggleTheme = () => setIsDark(!isDark);
 
   return (
-    <div className='min-h-screen bg-bg'>
+    <div className='min-h-screen bg'>
       <Navbar isDark={isDark} toggleTheme={toggleTheme} />
       <main>
         <Hero />

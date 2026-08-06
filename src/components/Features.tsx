@@ -45,14 +45,14 @@ function FeatureCard({
   onToggle: () => void;
 }) {
   return (
-    <div className='self-start bgLight rounded-xl border border overflow-hidden hover:borderHover transition-all shadowS hover:shadowM'>
+    <div className='self-start bgLight rounded-xl border overflow-hidden shadowS cardHover'>
       <button
         onClick={onToggle}
         className='w-full p-4 flex items-center justify-between text-left cursor-pointer'
         aria-expanded={isOpen}
       >
         <div className='flex items-center gap-3'>
-          <div className='w-10 h-10 rounded-lg bg border border textPrimary flex items-center justify-center shrink-0'>
+          <div className='w-10 h-10 rounded-lg bgRaised border textPrimary flex items-center justify-center shrink-0'>
             <CategoryIcon icon={category.icon} />
           </div>
           <div>
@@ -77,7 +77,7 @@ function FeatureCard({
             {category.commands.map((cmd) => (
               <span
                 key={cmd}
-                className='inline-block px-2 py-1 bg border border text text-xs font-mono rounded'
+                className='inline-block px-2 py-1 bgRaised border text text-xs font-mono rounded'
               >
                 .{cmd}
               </span>
@@ -91,10 +91,15 @@ function FeatureCard({
 
 export function Features() {
   return (
-    <section id='features' className='py-16 sm:py-24 bg'>
+    <section id='features' className='py-20 sm:py-28 bg'>
       <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='text-center mb-12'>
-          <h2 className='text-3xl sm:text-4xl font-bold text mb-4'>Packed with Features</h2>
+        <div className='text-center mb-14'>
+          <p className='text-xs font-semibold tracking-[0.2em] uppercase mb-4 textPrimary'>
+            Features
+          </p>
+          <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold text mb-4 tracking-tight'>
+            Packed with features
+          </h2>
           <p className='text-lg textMuted max-w-2xl mx-auto'>
             Owen comes with everything you need to make your WhatsApp groups more fun and
             productive.
@@ -102,15 +107,14 @@ export function Features() {
         </div>
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12'>
-          <div className='md:col-span-2 bgDark rounded-2xl p-6 sm:p-8 shadowL'>
-            <div className='flex flex-col h-full'>
-              <div className='w-12 h-12 rounded-xl bgPrimaryForeground/10 flex items-center justify-center mb-4'>
-                <Cpu className='w-6 h-6 textPrimaryForeground' />
+          <div className='md:col-span-2 bgDark rounded-2xl p-6 sm:p-8 shadowL border relative overflow-hidden'>
+            <div className='absolute inset-0 gridFade opacity-60' />
+            <div className='relative flex flex-col h-full'>
+              <div className='w-12 h-12 rounded-xl bgPrimary/10 border flex items-center justify-center mb-4'>
+                <Cpu className='w-6 h-6 textPrimary' />
               </div>
 
-              <h3 className='text-xl sm:text-2xl font-bold mb-2 textPrimary'>
-                AI-Powered Conversations
-              </h3>
+              <h3 className='text-xl sm:text-2xl font-bold mb-2 text'>AI powered conversations</h3>
 
               <p className='textMuted flex-1'>
                 Chat with ChatGPT directly in your WhatsApp. Get answers, have conversations, and
@@ -119,8 +123,8 @@ export function Features() {
             </div>
           </div>
 
-          <div className='bgLight rounded-2xl p-6 border border shadowS hover:shadowM transition-shadow'>
-            <div className='w-12 h-12 rounded-xl bg border border textPrimary flex items-center justify-center mb-4'>
+          <div className='bgLight rounded-2xl p-6 border shadowS cardHover'>
+            <div className='w-12 h-12 rounded-xl bgRaised border textPrimary flex items-center justify-center mb-4'>
               <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                 <path
                   strokeLinecap='round'
@@ -130,15 +134,15 @@ export function Features() {
                 />
               </svg>
             </div>
-            <h3 className='text-lg font-bold text mb-2'>Privacy First</h3>
+            <h3 className='text-lg font-bold text mb-2'>Privacy first</h3>
             <p className='text-sm textMuted'>
               Your data stays yours. We do not store messages or personal information beyond what is
               needed for the bot to function.
             </p>
           </div>
 
-          <div className='bgLight rounded-2xl p-6 border border shadowS hover:shadowM transition-shadow'>
-            <div className='w-12 h-12 rounded-xl bg border border textPrimary flex items-center justify-center mb-4'>
+          <div className='bgLight rounded-2xl p-6 border shadowS cardHover'>
+            <div className='w-12 h-12 rounded-xl bgRaised border textPrimary flex items-center justify-center mb-4'>
               <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                 <path
                   strokeLinecap='round'
@@ -148,15 +152,15 @@ export function Features() {
                 />
               </svg>
             </div>
-            <h3 className='text-lg font-bold text mb-2'>Lightning Fast</h3>
+            <h3 className='text-lg font-bold text mb-2'>Lightning fast</h3>
             <p className='text-sm textMuted'>
-              Optimized for speed with anti-spam protection and cooldown management to keep
+              Optimized for speed with anti spam protection and cooldown management to keep
               responses quick.
             </p>
           </div>
 
-          <div className='bgLight rounded-2xl p-6 border border shadowS hover:shadowM transition-shadow'>
-            <div className='w-12 h-12 rounded-xl bg border border textPrimary flex items-center justify-center mb-4'>
+          <div className='bgLight rounded-2xl p-6 border shadowS cardHover'>
+            <div className='w-12 h-12 rounded-xl bgRaised border textPrimary flex items-center justify-center mb-4'>
               <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                 <path
                   strokeLinecap='round'
@@ -166,15 +170,15 @@ export function Features() {
                 />
               </svg>
             </div>
-            <h3 className='text-lg font-bold text mb-2'>Always Online</h3>
+            <h3 className='text-lg font-bold text mb-2'>Always online</h3>
             <p className='text-sm textMuted'>
               Hosted on reliable infrastructure. Owen is available 24/7, ready to respond whenever
               you need.
             </p>
           </div>
 
-          <div className='bgLight rounded-2xl p-6 border border shadowS hover:shadowM transition-shadow'>
-            <div className='w-12 h-12 rounded-xl bg border border textPrimary flex items-center justify-center mb-4'>
+          <div className='bgLight rounded-2xl p-6 border shadowS cardHover'>
+            <div className='w-12 h-12 rounded-xl bgRaised border textPrimary flex items-center justify-center mb-4'>
               <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                 <path
                   strokeLinecap='round'
@@ -184,7 +188,7 @@ export function Features() {
                 />
               </svg>
             </div>
-            <h3 className='text-lg font-bold text mb-2'>Completely Free</h3>
+            <h3 className='text-lg font-bold text mb-2'>Completely free</h3>
             <p className='text-sm textMuted'>
               All features are free to use. No hidden charges, no premium tiers, no limits.
             </p>
@@ -209,10 +213,15 @@ export function Commands() {
   };
 
   return (
-    <section id='commands' className='py-16 sm:py-24 bgDark'>
+    <section id='commands' className='py-20 sm:py-28 bgDark border-t'>
       <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='text-center mb-12'>
-          <h2 className='text-3xl sm:text-4xl font-bold text mb-4'>Command Categories</h2>
+        <div className='text-center mb-14'>
+          <p className='text-xs font-semibold tracking-[0.2em] uppercase mb-4 textPrimary'>
+            Commands
+          </p>
+          <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold text mb-4 tracking-tight'>
+            Command categories
+          </h2>
           <p className='text-lg textMuted max-w-2xl mx-auto'>
             Click on any category to see all available commands. Every command starts with a dot.
           </p>

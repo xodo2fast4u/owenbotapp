@@ -6,27 +6,31 @@ export function Hero() {
   const totalCommands = getTotalCommands();
 
   return (
-    <section className='pt-24 pb-16 sm:pt-32 sm:pb-24 bgDark'>
-      <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
+    <section className='relative pt-32 pb-20 sm:pt-44 sm:pb-28 bgDark overflow-hidden'>
+      <div className='absolute inset-0 gridFade' />
+      <div className='absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bgPrimary opacity-[0.06] blur-[120px]' />
+
+      <div className='relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='text-center max-w-3xl mx-auto'>
-          <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold text tracking-tight mb-6'>
-            Meet <span className='textPrimary'>Owen</span>, Your WhatsApp Companion
+          <h1 className='text-5xl sm:text-6xl lg:text-7xl font-bold text tracking-tight leading-[1.05] mb-6'>
+            Meet <span className='textPrimary'>Owen</span>
+            <br />
+            your WhatsApp companion
           </h1>
 
-          <p className='text-lg sm:text-xl textMuted mb-8 max-w-2xl mx-auto'>
+          <p className='text-lg sm:text-xl textMuted mb-10 max-w-2xl mx-auto leading-relaxed'>
             A powerful WhatsApp bot with {totalCommands}+ commands. Entertainment, games, AI chat,
             media downloads, group management, and more. All in one bot.
           </p>
 
-          <div className='flex flex-col sm:flex-row items-center justify-center gap-4 mb-12'>
+          <div className='flex flex-col sm:flex-row items-center justify-center gap-3 mb-16'>
             <Button
               asChild
-              variant='outline'
               size='lg'
-              className='w-full sm:w-auto px-8 h-12 shadowS hover:shadowM border hover:borderHover textMuted hover:text transition-all duration-200'
+              className='w-full sm:w-auto px-8 h-12 rounded-lg bgPrimary textPrimaryForeground shadowM hover:shadowL hover:bgPrimaryHover transition-all duration-200 font-medium'
             >
               <a
-                href='https://owen-production-28fc.up.railway.app/'
+                href='https://owen-panel.up.railway.app/'
                 target='_blank'
                 rel='noopener noreferrer'
               >
@@ -41,7 +45,7 @@ export function Hero() {
               asChild
               variant='outline'
               size='lg'
-              className='w-full sm:w-auto px-8 h-12 shadowS hover:shadowM border hover:borderHover textMuted hover:text transition-all duration-200'
+              className='w-full sm:w-auto px-8 h-12 rounded-lg shadowS hover:shadowM border hover:borderHover bgLight textMuted hover:text transition-all duration-200 font-medium'
             >
               <a href='#features'>
                 Explore Features
@@ -50,22 +54,22 @@ export function Hero() {
             </Button>
           </div>
 
-          <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
-            <div className='bgLight rounded-xl p-4 border border shadowS'>
+          <div className='grid grid-cols-2 md:grid-cols-4 gap-3'>
+            <div className='bgLight rounded-xl p-5 border shadowS cardHover'>
               <div className='text-2xl sm:text-3xl font-bold textPrimary'>{totalCommands}+</div>
-              <div className='text-sm textMuted'>Commands</div>
+              <div className='text-sm textMuted mt-1'>Commands</div>
             </div>
-            <div className='bgLight rounded-xl p-4 border border shadowS'>
+            <div className='bgLight rounded-xl p-5 border shadowS cardHover'>
               <div className='text-2xl sm:text-3xl font-bold textPrimary'>12</div>
-              <div className='text-sm textMuted'>Categories</div>
+              <div className='text-sm textMuted mt-1'>Categories</div>
             </div>
-            <div className='bgLight rounded-xl p-4 border border shadowS'>
+            <div className='bgLight rounded-xl p-5 border shadowS cardHover'>
               <div className='text-2xl sm:text-3xl font-bold textPrimary'>24/7</div>
-              <div className='text-sm textMuted'>Online</div>
+              <div className='text-sm textMuted mt-1'>Online</div>
             </div>
-            <div className='bgLight rounded-xl p-4 border border shadowS'>
+            <div className='bgLight rounded-xl p-5 border shadowS cardHover'>
               <div className='text-2xl sm:text-3xl font-bold textPrimary'>Free</div>
-              <div className='text-sm textMuted'>To Use</div>
+              <div className='text-sm textMuted mt-1'>To Use</div>
             </div>
           </div>
         </div>

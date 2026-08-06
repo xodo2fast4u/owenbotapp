@@ -48,10 +48,15 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section id='testimonials' className='py-16 sm:py-24 bg'>
+    <section id='testimonials' className='py-20 sm:py-28 bg'>
       <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='text-center mb-12'>
-          <h2 className='text-3xl sm:text-4xl font-bold text mb-4'>Loved by Users</h2>
+        <div className='text-center mb-14'>
+          <p className='text-xs font-semibold tracking-[0.2em] uppercase mb-4 textPrimary'>
+            Testimonials
+          </p>
+          <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold text mb-4 tracking-tight'>
+            Loved by users
+          </h2>
           <p className='text-lg textMuted max-w-2xl mx-auto'>
             See what people are saying about Owen.
           </p>
@@ -68,10 +73,10 @@ export function Testimonials() {
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index} className='pl-4 md:basis-1/2 lg:basis-1/3'>
                 <div className='h-full'>
-                  <Card className='border shadowS hover:shadowM transition-shadow h-full'>
+                  <Card className='bgLight border shadowS cardHover h-full'>
                     <CardContent className='p-6'>
                       <div className='flex items-center gap-3 mb-4'>
-                        <div className='w-10 h-10 rounded-full bg border border textPrimary flex items-center justify-center font-semibold'>
+                        <div className='w-10 h-10 rounded-full bgRaised border textPrimary flex items-center justify-center font-semibold'>
                           {testimonial.name.charAt(0)}
                         </div>
                         <div>
